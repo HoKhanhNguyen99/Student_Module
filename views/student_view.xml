@@ -6,10 +6,10 @@
       <field name="model">student_module.student</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="name"/>
-          <field name="age"/>
-          <field name="description"/>
-          <field name="class_id"/>
+          <field name="name" string="Name"/>
+          <field name="age" string="Age"/>
+          <field name="description" string="Description"/>
+          <field name="class_id" string="Class"/>
         </tree>
       </field>
     </record>
@@ -17,18 +17,17 @@
     <!-- actions opening views on models -->
     
     <record model="ir.ui.view" id="student_module.search_student">
-      <field name="name">student_module.search_student</field>
       <field name="model">student_module.student</field>
       <field name="arch" type="xml"> 
         <search>
-            <field name="name"/>
-            <field name="description"/>
-            <field name="class_id"/>
+            <field name="name" string="Name"/>
+            <field name="description" string="Description"/>
+            <field name="class_id" string="Class"/>
         </search>
       </field>
     </record>
 
-    <record model="ir.ui.view" id="student_module.form">
+    <record model="ir.ui.view" id="student_view_form">
       <field name="name">Student</field>
       <field name="model">student_module.student</field>
       <field name="arch" type="xml">
@@ -36,9 +35,9 @@
             <group colspan="4">
                 <group colspan="4" col="4">
                     <separator string="Student" colspan="4"/>
-                    <field name="name"/>
-                    <field name="age"/>
-                    <field name="class_id"/>
+                    <field name="name" string="Name"/>
+                    <field name="age" string="Age"/>
+                    <field name="class_id" string="Class"/>
                 </group>
                 <notebook colspan="4">
                     <page string="Description">
@@ -50,7 +49,7 @@
       </field>
     </record>
 
-    <record model="ir.actions.act_window" id="student_module.open_student">
+    <record model="ir.actions.act_window" id="student_action">
       <field name="name">Student</field>
       <field name="res_model">student_module.student</field>
       <field name="view_mode">tree,form</field>
@@ -59,7 +58,7 @@
     <menuitem id="menu_student" name="Student Manager" sequence="10"
           />
     <menuitem name="Student" id="student_student" parent="menu_student" 
-              action="open_student"/>
+              action="student_action"/>
   </data>
 </odoo>
 
